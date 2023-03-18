@@ -29,8 +29,11 @@ const updateAnimal = (arr, callback) => {
   arr.forEach((string) => {
     newArray.push(callback(string));
   })
+  //arr.forEach(str => newArray.push(callback(str));  
   return newArray;
 }
+
+//updateAnimal(['Ryan'],upper);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -49,6 +52,8 @@ const sortNames = (arr) => {
     }
   });
   return newArray;
+
+  //return arr.sort(); this also works
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,6 +93,8 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   return arr.sort((a,b) => (a.charAt() < b.charAt() ? -1 : 1))
+
+  //return arr.sort();  this works too!
 }
 
 /* ------------------------------------------------------------------------------------------------
