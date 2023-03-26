@@ -68,11 +68,17 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  let arr = Object.entries(obj).flat();
-  newArr = [];
-  for (let i = 0; i < arr.length; i++){
-    arr[i];
-  }
+  // let arr = Object.entries(obj).flat();
+  // newArr = [];
+  // for (let i = 0; i < arr.length; i++){
+  //   arr[i];
+  // }
+  let newData = [];
+
+  Object.keys(obj).forEach(key => newData.push(`${key}: ${obj[key]}`));
+
+  return newData;
+
 
 };
 
@@ -128,7 +134,10 @@ const characters = [
 ];
 
 const getHouses = (arr) => {
-  let houses = Object.values(arr.house);
+  let houses = [];
+  arr.forEach(person => {
+    houses.push(person.house);
+  })
   return houses;
 };
 
@@ -145,14 +154,25 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  let ans = Object.values(arr).forEach(key => {
-    if (key.name === character && key.children){
-      return true;
-    } else{
-      return false;
+  // let ans = Object.values(arr).forEach(key => {
+  //   if (key.name === character && key.children){
+  //     return true;
+  //   } else{
+  //     return false;
+  //   }
+  // })
+  // return ans;
+  let hasChildren = false;
+  arr.forEach(person => {
+    if (person.name === character){
+      let values = Object.values(person);
+      values.length === 4 ? hasChildren = true : hasChildren;
+    
     }
   })
-  return ans;
+  return hasChildren;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
