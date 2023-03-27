@@ -53,7 +53,7 @@ const totalSum = (matrix) => {
 };
 
 
-/* ------------------------------------------------------------------------------------------------
+/*  ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling salmon cookies. Pat has data for the hourly sales of cookies per hour for each store. He wants to create an array of the total number of cookies sold per hour for all of his stores combined.
@@ -102,9 +102,12 @@ const salesData = (hours, data) => {
   hours.forEach((hour, idx )=> {
     let obj = { sales: `${data[idx]} cookies`, time: hour};
     objArray.push(obj);
+    //can also not declare obj and just push into ObjArray
+    //can also do forEach on data instead of hours
   })
   return objArray;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
