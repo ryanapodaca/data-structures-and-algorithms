@@ -24,7 +24,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+  return arr.map(str => str.charAt(0).toUpperCase() + str.substring(1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  return arr.filter(personObj => personObj.mass > 77).map(person => person.name).join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,7 +117,7 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((a,b)=> a[property] > b[property] ? 1 : -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -133,7 +133,8 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  let pattern = /(^https:\/\/)/;
+  return pattern.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -156,7 +157,24 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  const helpCheck = (r1,c1,r2,c2,r3,c3) =>{
+    return board[r1][c1]!=='' &&
+    board[r1][c1] === board[r1][c2] &&
+    board[r2][c2] === board[r3][c3];
+  }
+
+  if(helpCheck(0,0,0,1,0,2)) return true;
+  if(helpCheck(1,0,1,1,1,2)) return true;
+  if(helpCheck(2,0,2,1,1,2)) return true;
+
+  if(helpCheck(0,0,1,0,2,0)) return true;
+  if(helpCheck(0,1,1,1,2,1)) return true;
+  if(helpCheck(0,2,1,2,2,2)) return true;
+
+  if(helpCheck(0,0,2,2,2,2)) return true;
+  if(helpCheck(0,2,1,1,2,0)) return true;
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------

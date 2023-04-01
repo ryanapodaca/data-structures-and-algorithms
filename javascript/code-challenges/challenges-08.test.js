@@ -128,14 +128,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  let newArr = [];
-  let regex = /^[A-J]/g;
-  newArr.forEach(city =>{
-    if(regex.test(city)){
-      newArr.push(city);
-    }
-  });
-  return newArr;
+  // let newArr = [];
+  let regex = /^[A-J]/;
+  // newArr.forEach(city =>{
+  //   if(regex.test(city)){
+  //     newArr.push(city);
+  //   }
+  // });
+  // return newArr;
+  return arr.filter(city => regex.test(city));
 };
 
 /* ------------------------------------------------------------------------------------------------
