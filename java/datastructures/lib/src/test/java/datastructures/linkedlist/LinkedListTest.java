@@ -60,5 +60,56 @@ public class LinkedListTest {
     assertEquals("{ 3 } -> { 2 } -> { 1 } -> NULL", list.toString());
   }
 
+  @Test
+  public void testAppendSingleNode() {
+    LinkedList list = new LinkedList();
+    list.append(5);
+    assertEquals("5", list.toString());
+  }
 
+  @Test
+  public void testAppendMultipleNodes() {
+    LinkedList list = new LinkedList();
+    list.append(5);
+    list.append(10);
+    list.append(15);
+    assertEquals("5 -> 10 -> 15", list.toString());
+  }
+
+  @Test public void testInsertBeforeNodeInMiddle() {
+    LinkedList list = new LinkedList();
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    list.insertBefore(2, 7);
+    assertEquals("{ 1 } -> { 7 } -> { 2 } -> { 3 } -> NULL", list.toString());
+  }
+
+  @Test
+  public void testInsertBeforeFirstNode() {
+    LinkedList list = new LinkedList();
+    list.append(1);
+    list.append(2);
+    list.insertBefore(1, 2);
+    assertEquals("{ 2 } -> { 1 } -> { 2 } -> NULL", list.toString());
+  }
+
+  @Test
+  public void testInsertAfterNodeInMiddle() {
+    LinkedList list = new LinkedList();
+    list.append(5);
+    list.append(10);
+    list.append(15);
+    list.insertAfter(10, 12);
+    assertEquals("{ 5 } -> { 10 } -> { 12 } -> { 15 } -> NULL", list.toString());
+  }
+
+  @Test
+  public void testInsertAfterLastNode() {
+    LinkedList list = new LinkedList();
+    list.append(5);
+    list.append(10);
+    list.insertAfter(10, 12);
+    assertEquals("{ 5 } -> { 10 } -> { 12 } -> NULL", list.toString());
+  }
 }

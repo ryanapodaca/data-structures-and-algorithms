@@ -42,4 +42,63 @@ public class LinkedList
   public Node getHead() {
     return this.head;
   }
+
+  public void append(int value) {
+    Node newNode = new Node(value);
+
+    if (head == null) {
+      head = newNode;
+      return;
+    }
+
+    Node currNode = head;
+    while (currNode.getNext() != null) {
+      currNode = currNode.getNext();
+    }
+    currNode.setNext(newNode);
+  }
+
+  public void insertBefore(int value, int newValue) {
+    Node newNode = new Node(newValue);
+
+    if (head == null) {
+      head = newNode;
+      return;
+    }
+
+    if (head.getValue() == value) {
+      newNode.setNext(head);
+      head = newNode;
+      return;
+    }
+
+    Node currNode = head;
+    while (currNode.getNext() != null) {
+      if (currNode.getNext().getValue() == value) {
+        newNode.setNext(currNode.getNext());
+        currNode.setNext(newNode);
+        return;
+      }
+      currNode = currNode.getNext();
+    }
+  }
+
+  public void insertAfter(int value, int newValue) {
+    Node newNode = new Node(newValue);
+
+    if (head == null) {
+      head = newNode;
+      return;
+    }
+
+    Node currNode = head;
+    while (currNode != null) {
+      if (currNode.getValue() == value) {
+        newNode.setNext(currNode.getNext());
+        currNode.setNext(newNode);
+        return;
+      }
+      currNode = currNode.getNext();
+    }
+  }
 }
