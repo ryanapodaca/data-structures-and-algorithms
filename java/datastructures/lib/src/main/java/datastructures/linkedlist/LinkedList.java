@@ -2,8 +2,7 @@ package datastructures.linkedlist;
 
 import datastructures.linkedlist.Node;
 
-public class LinkedList
-{
+public class LinkedList {
   public Node head = null;
   Node tail = null;
 
@@ -22,6 +21,7 @@ public class LinkedList
     }
     return false;
   }
+
   @Override
   public String toString() {
     if (head == null)
@@ -101,4 +101,35 @@ public class LinkedList
       currNode = currNode.getNext();
     }
   }
-}
+
+  public int kthFromEnd(int k) {
+    if(k < 0){
+      throw new RuntimeException("Cannot be negative");
+    }
+
+    Node temp = head;
+    Node kthNode = head;
+
+    //Exc for when empty
+    if(head == null){
+      throw new RuntimeException("Linked list is empty.");
+    }
+
+    //Exc for out of bounds and setup for kth from end.
+    for(int i = 0; i < k;i++){
+      if(temp == null){
+        throw new RuntimeException("k is larger than the linked list");
+      }
+      temp = temp.next;
+    }
+
+    //move temp to end. Once reached, kthNode will be situated at kthFromEnd.
+    while(temp != null){
+      temp = temp.next;
+      kthNode = kthNode.next;
+    }
+    return kthNode.value;
+
+    }
+  }
+
