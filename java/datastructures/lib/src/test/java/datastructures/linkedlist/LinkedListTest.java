@@ -112,4 +112,45 @@ public class LinkedListTest {
     list.insertAfter(10, 12);
     assertEquals("{ 5 } -> { 10 } -> { 12 } -> NULL", list.toString());
   }
+
+  @Test void testKthFromEndWithKGreaterThanLength() {
+    LinkedList ll = new LinkedList();
+    ll.insert(1);
+    ll.insert(2);
+    assertThrows(RuntimeException.class, () -> ll.kthFromEnd(5));
+  }
+
+  @Test void testKthFromEndWithKEqualToLength() {
+    LinkedList ll = new LinkedList();
+    ll.insert(1);
+    ll.insert(2);
+    ll.insert(3);
+    assertEquals(3, ll.kthFromEnd(3));
+  }
+
+  @Test void testKthFromEndWithKNotPositive() {
+    LinkedList ll = new LinkedList();
+    ll.insert(1);
+    ll.insert(2);
+    ll.insert(3);
+
+    assertThrows(RuntimeException.class, () -> ll.kthFromEnd(-1));
+  }
+
+  @Test void testKthFromEndWithSize1List() {
+    LinkedList ll = new LinkedList();
+    ll.insert(1);
+    assertEquals(1, ll.kthFromEnd(1));
+  }
+
+  @Test void testKthFromEndWithKInTheMiddle() {
+    LinkedList ll = new LinkedList();
+    ll.insert(1);
+    ll.insert(2);
+    ll.insert(3);
+    ll.insert(4);
+    ll.insert(5);
+    assertEquals(2, ll.kthFromEnd(2));
+  }
+
 }
