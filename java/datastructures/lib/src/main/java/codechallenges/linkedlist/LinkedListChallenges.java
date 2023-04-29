@@ -40,9 +40,8 @@ public class LinkedListChallenges
 
       return temp.next;
 
-
-    }
-
   }
 
 }
+
+
