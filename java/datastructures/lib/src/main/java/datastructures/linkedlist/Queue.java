@@ -4,10 +4,10 @@ import java.util.EmptyStackException;
 
 public class Queue<T>
 {
-  NodeT<T> front;
+  public NodeT<T> front;
   NodeT<T> back;
 
-  void enqueue(T valueToEnqueue)
+  public void enqueue(T valueToEnqueue)
   {
     NodeT<T> newNode = new NodeT<T>(valueToEnqueue);
     if(back == null) {
@@ -19,7 +19,7 @@ public class Queue<T>
     }
   }
 
-  T dequeue()
+  public T dequeue()
   {
     if(front == null)
       throw new EmptyStackException();
