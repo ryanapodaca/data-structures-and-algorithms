@@ -9,4 +9,19 @@ public class NodeT<T> {
     this.next = null;
   }
 
+  public T getValue() {
+    return value;
+  }
+
+  public void setValue(T value) {
+    this.value = value;
+  }
+
+  public NodeT<T> getNext() {
+    return next;
+  }
+
+  public void setNext(NodeT<T> next) {
+    this.next = next;
+  }
 }
