@@ -40,7 +40,7 @@ public class Queue<T>
     return front.value;
   }
 
-  boolean isEmpty()
+  public boolean isEmpty()
   {
     if (front == null)
       return true;

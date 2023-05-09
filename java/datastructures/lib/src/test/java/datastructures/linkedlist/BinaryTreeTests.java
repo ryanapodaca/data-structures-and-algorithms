@@ -52,4 +52,5 @@ public class BinaryTreeTests {
     assertTrue(newTree.contains(2));
     assertFalse(newTree.contains(4));
   }
+
 }
