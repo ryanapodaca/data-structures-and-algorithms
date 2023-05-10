@@ -4,9 +4,8 @@ import datastructures.linkedlist.BinaryTree;
 import datastructures.linkedlist.Queue;
 import datastructures.linkedlist.TreeNode;
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class TreeBreadthTraversal {
   public static ArrayList<Integer> treeBreadthArrayReturn(BinaryTree<Integer> tree) {

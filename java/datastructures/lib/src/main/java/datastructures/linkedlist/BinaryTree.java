@@ -99,7 +99,7 @@ public class BinaryTree<T> {
       return null;
     }
 
-    Queue<TreeNode> breadth = new Queue();
+    Queue<TreeNode<T>> breadth = new Queue();
 
     Integer max = Integer.MIN_VALUE;
 
@@ -107,7 +107,7 @@ public class BinaryTree<T> {
 
     while (!breadth.isEmpty()){
 
-      TreeNode front = breadth.dequeue();
+      TreeNode<T> front = breadth.dequeue();
 
       if (front.leftNode != null) {
         breadth.enqueue(front.leftNode);
