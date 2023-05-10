@@ -1,6 +1,7 @@
 package codechallenges.trees;
 
 import datastructures.linkedlist.BinaryTree;
+import datastructures.linkedlist.KaryTree;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -60,5 +61,37 @@ public class TreesChallengeTests {
     ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(2, 7, 5, 2, 6, 9, 5));
     assertEquals(expected, treeBreadthArrayReturn(tree));
   }
+
+//  public static void main(String[] args) {
+//    KaryTree<Integer> tree = new KaryTree<>();
+//    tree.add(1);
+//    tree.add(2);
+//    tree.add(3);
+//    tree.add(4);
+//    tree.add(5);
+//    tree.add(6);
+//    tree.add(7);
+//
+//    // The resulting tree should have the structure:
+//    //       1
+//    //     /   \
+//    //    2     3
+//    //   / \   / \
+//    //  4   5 6   7
+//
+//    // Check the root node
+//    assert(tree.root.value == 1);
+//
+//    // Check the first level
+//    assert(tree.root.nodes.get(0).value == 2);
+//    assert(tree.root.nodes.get(1).value == 3);
+//
+//    // Check the second level
+//    assert(tree.root.nodes.get(0).nodes.get(0).value == 4);
+//    assert(tree.root.nodes.get(0).nodes.get(1).value == 5);
+//    assert(tree.root.nodes.get(1).nodes.get(0).value == 6);
+//    assert(tree.root.nodes.get(1).nodes.get(1).value == 7);
+//  }
+
 
 }
