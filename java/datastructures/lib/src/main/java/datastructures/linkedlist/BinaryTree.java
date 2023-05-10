@@ -126,5 +126,4 @@ public class BinaryTree<T> {
     return max;
   }
 
-
 }
