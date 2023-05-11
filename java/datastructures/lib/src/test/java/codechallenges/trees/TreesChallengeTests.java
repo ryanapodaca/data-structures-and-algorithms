@@ -40,8 +40,7 @@ public class TreesChallengeTests {
   }
 
 
-  @Test
-  void testTreeBreadthArrayReturn(){
+  @Test void testTreeBreadthArrayReturn(){
 
     BinaryTree<Integer> tree = new BinaryTree<>();
     tree.add(2);
@@ -59,6 +58,19 @@ public class TreesChallengeTests {
 
     // Convert the expected array to an ArrayList
     ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(2, 7, 5, 2, 6, 9, 5));
+    assertEquals(expected, treeBreadthArrayReturn(tree));
+  }
+
+  @Test void testTreeBreadthArrayReturnWithNegatives(){
+
+    BinaryTree<Integer> tree = new BinaryTree<>();
+    tree.add(-1);
+    tree.add(4);
+    tree.add(5);
+
+
+    // Convert the expected array to an ArrayList
+    ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(-1,4,5));
     assertEquals(expected, treeBreadthArrayReturn(tree));
   }
 

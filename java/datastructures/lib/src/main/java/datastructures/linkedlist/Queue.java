@@ -14,7 +14,7 @@ public class Queue<T>
       front = newNode;
       back = newNode;
     } else{
-      newNode.next = back;
+      back.next = newNode;
       back = newNode;
     }
   }
