@@ -18,11 +18,11 @@ public class KaryFIZZBUZZ {
     while (!queue.isEmpty()) {
       KTreeNode node = queue.dequeue();
 
-      if ((int) node.value % 3 == 0)
+      if ((int) node.value % 5 == 0 && (int) node.value % 3 == 0)
         fizzBuzzTree.add("Fizz");
       else if ((int) node.value % 5 == 0)
         fizzBuzzTree.add("Buzz");
-      else if ((int) node.value % 5 == 0 && (int) node.value % 3 == 0)
+      else if ((int) node.value % 3 == 0)
         fizzBuzzTree.add("FizzBuzz");
 
       for (int i = 0; i < tree.k; i++) {
