@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class HashTable<K, V> {
   ArrayList<LinkedList<Entry<K, V>>> table;
-  private static final int defaultCapacity = 10; //default bucket size
+  private static final int defaultCapacity = 20; //default bucket size
   private int capacity;
 
   public HashTable() {
