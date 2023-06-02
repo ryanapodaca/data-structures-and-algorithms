@@ -20,4 +20,5 @@ public class LeftJoin {
 
     return leftJoinHT;
   }
+
 }

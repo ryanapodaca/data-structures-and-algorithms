@@ -73,7 +73,7 @@ public class HashTable<K, V> {
   }
 
   public int hash(K key) {
-    return key.hashCode() % capacity;
+    return Math.abs(key.hashCode() % capacity);
   }
 
 
