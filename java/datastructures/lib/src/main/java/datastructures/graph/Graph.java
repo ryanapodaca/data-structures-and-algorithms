@@ -1,6 +1,7 @@
 package datastructures.graph;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 
 public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<T>>  // just in case you have Comparable data structures
@@ -37,6 +38,31 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
   {
     return new LinkedList<>(adjacencyLists.keySet());
 
+  }
+
+  public LinkedList<Vertex<T>> depthFirstTraversal(Vertex<T> vertex) {
+    if (vertex == null)
+      return null;
+
+    HashSet<Vertex<T>> visited = new HashSet<>();
+    LinkedList<Vertex<T>> traversalOrder = new LinkedList<>();
+
+    depthFirstTraversal(vertex, visited, traversalOrder);
+
+    return traversalOrder;
+  }
+
+  private void depthFirstTraversal(Vertex<T> vertex, HashSet<Vertex<T>> visited, LinkedList<Vertex<T>> traversalOrder) {
+    visited.add(vertex);
+    traversalOrder.add(vertex);
+
+    LinkedList<Edge<T>> neighbors = adjacencyLists.get(vertex);
+    for (Edge<T> edge : neighbors) {
+      Vertex<T> neighbor = edge.destination;
+      if (!visited.contains(neighbor)) {
+        depthFirstTraversal(neighbor, visited, traversalOrder);
+      }
+    }
   }
 
   public LinkedList<Edge<T>> getNeighbors(Vertex<T> vertex)

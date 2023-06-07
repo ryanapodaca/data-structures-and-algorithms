@@ -16,3 +16,8 @@ prompts adjacency list just for a vertexes neighbors
 
 size()
 returns number of vertices
+
+WhiteBoard for CC 38
+
+![wb](wb.png)
+
